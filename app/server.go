@@ -13,6 +13,7 @@ import (
 func main() {
 
 	http.HandleFunc("/bar", func(w http.ResponseWriter, r *http.Request) {
+		log.Print("Request Accept")
 		fmt.Println("[Method] " + r.Method)
 		fmt.Println("[URL] " + r.URL.String())
 		fmt.Println("[Proto] " + r.Proto)
