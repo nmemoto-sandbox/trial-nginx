@@ -1,10 +1,15 @@
 version: '3'
 services:
+  proxy:
+    build:
+      context: ./proxy
+    ports:
+      - "80:80"
   web:
     build:
       context: ./web
     ports:
-      - "80:80"
+      - "80"
   app:
     build:
       context: ./app
