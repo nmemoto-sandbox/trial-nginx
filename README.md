@@ -14,3 +14,5 @@ nginx の挙動確認用のリポジトリ
   - 参考ページ
     - https://developer.mozilla.org/ja/docs/Web/HTTP/Headers/Forwarded
     - https://www.nginx.com/resources/wiki/start/topics/examples/forwarded/
+- `proxy_http_version 1.1;`
+  - プロキシ先への接続(proxy->web, web->app)を HTTP/1.1 で行うように設定した。
