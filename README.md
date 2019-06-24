@@ -17,4 +17,6 @@ nginx の挙動確認用のリポジトリ
 - `proxy_http_version 1.1;`
   - プロキシ先への接続(proxy->web, web->app)を HTTP/1.1 で行うように設定した。
 - X-Forwarded-Proto ヘッダーを追加
-  - proxy でリクエストを受けたときの\$scheme を付加し、web では proxy でつけたヘッダーをそのまま app へのリクエストに付加した
+  - proxy でリクエストを受けたときの\$scheme を付加し、web では proxy でつけたヘッダーをそのまま app へのリクエストに付加した(\$http_x_forwarded_proto を利用した)
+- X-Real-Ip ヘッダーを追加
+  - proxy でリクエストを受けたときの$remote_addr(リクエスト元のIP)を付加し、web では proxy でつけたヘッダーをそのまま app へのリクエストに付加した($http_x_real_ip を利用した)
