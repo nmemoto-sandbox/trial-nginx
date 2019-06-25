@@ -20,3 +20,7 @@ nginx の挙動確認用のリポジトリ
   - proxy でリクエストを受けたときの\$scheme を付加し、web では proxy でつけたヘッダーをそのまま app へのリクエストに付加した(\$http_x_forwarded_proto を利用した)
 - X-Real-Ip ヘッダーを追加
   - proxy でリクエストを受けたときの$remote_addr(リクエスト元のIP)を付加し、web では proxy でつけたヘッダーをそのまま app へのリクエストに付加した($http_x_real_ip を利用した)
+- web コンテナに app コンテナのレスポンスのキャッシュを作成するようにした
+  - expires でクライアント側のキャッシュの有効期限を 30 秒に設定
+  - proxy_cache_valid で app コンテナのレスポンスをキャッシュする時間を設定
+    - http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_valid
